@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ブラウザ Tetris</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <div class="game-container">
+        <div class="game-area">
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
+        </div>
+        <div class="sidebar">
+            <div class="next-piece-container">
+                <h3>Next</h3>
+                <canvas id="nextCanvas" width="120" height="120"></canvas>
+            </div>
+            <div class="game-info">
+                <div class="score-info">
+                    <p>Score: <span id="score">000000</span></p>
+                    <p>Level: <span id="level">1</span></p>
+                    <p>Lines: <span id="lines">0</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="resetBtn">Reset</button>
+    </div>
+    <div class="instructions">
+        <h3>Controls:</h3>
+        <p>← → : Move left/right</p>
+        <p>↓ : Soft drop</p>
+        <p>↑ : Rotate</p>
+        <p>Space : Hard drop</p>
+        <p>P : Pause/Resume</p>
+        <p>R : Reset</p>
+    </div>
+    <div id="gameOverScreen" class="game-over hidden">
+        <h2>Game Over</h2>
+        <p>Final Score: <span id="finalScore">0</span></p>
+        <button id="restartBtn">Restart</button>
+    </div>
+
+    <script type="module" src="js/game.js"></script>
 </body>
 </html>
